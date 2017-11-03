@@ -1,5 +1,8 @@
 'use strict';
 
+import {printer} from './printer';
+import {looper} from './looper';
+import {sorter} from './sorter';
 let users = [
   {
     name: "Joel",
