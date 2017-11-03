@@ -85,6 +85,8 @@ module.exports = {
 
 The `output` property is itself an object with more details about the output (rather than an array of possible outputs). The above example says that we should output into the `dist` folder (in the current directory), combining the code into a file called `bundle.js`.
 
+Since we don't have webpack installed globally (which you're welcome to do if you wish `npm install -g webpack`), we'll need to add to our `package.json` file, to tell `npm` what to do with our local files!
+
 Adding to your `package.json` file, we'll need to update the `scripts` key:
 ```
 ...
@@ -94,8 +96,6 @@ Adding to your `package.json` file, we'll need to update the `scripts` key:
 },
 ...
 ```
-
-Since we don't have webpack installed globally (which you're welcome to do if you wish `npm install -g webpack`), we'll need to add to our `package.json` file, to tell `npm` what to do with our local files!
 
 Now, if you run `npm run build`, the project will build! Similar to `npm install`, when we run this command, we tell `npm` that, within this project, we want to `run` the `build` script, which will call the local version of `webpack` to run. When `webpack` runs, it looks for the `webpack.config.js` file, and then executes using that file to build your project!
 
