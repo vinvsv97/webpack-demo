@@ -1,5 +1,5 @@
 'use strict';
 
-function printer(func) {
+export function printer(func) {
   console.log(func());
 }

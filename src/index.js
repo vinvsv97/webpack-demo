@@ -1,5 +1,9 @@
 'use strict';
 
+import { sorter } from "./sorter"
+import { looper } from "./looper"
+import { printer } from "./printer"
+
 let users = [
   {
     name: "Joel",
