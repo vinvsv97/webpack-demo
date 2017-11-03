@@ -85,6 +85,8 @@ module.exports = {
 
 The `output` property is itself an object with more details about the output (rather than an array of possible outputs). The above example says that we should output into the `dist` folder (in the current directory), combining the code into a file called `bundle.js`.
 
+Since we don't have webpack installed globally (which you're welcome to do if you wish `npm install -g webpack`), we'll need to add to our `package.json` file, to tell `npm` what to do with our local files!
+
 Adding to your `package.json` file, we'll need to update the `scripts` key:
 ```
 ...
@@ -94,8 +96,6 @@ Adding to your `package.json` file, we'll need to update the `scripts` key:
 },
 ...
 ```
-
-Since we don't have webpack installed globally (which you're welcome to do if you wish `npm install -g webpack`), we'll need to add to our `package.json` file, to tell `npm` what to do with our local files!
 
 Now, if you run `npm run build`, the project will build! Similar to `npm install`, when we run this command, we tell `npm` that, within this project, we want to `run` the `build` script, which will call the local version of `webpack` to run. When `webpack` runs, it looks for the `webpack.config.js` file, and then executes using that file to build your project!
 
@@ -210,8 +210,11 @@ Now that we've put in the hard work making webpack bundle our files, let's actua
 
 With any luck, running `npm run build` one last time should give you a good output, and finally, opening `index.html` and looking at the console log should have your sorted user array!
 
-## Further Loader Practice
-The webpage doesn't look great yet, because there is no styling (CSS) involved. To practice working with webpack loaders, add an `import` for `main.css` stylesheet to your `index.js`, and modify `webpack.config.js` so that it will bundle that file:
+## Further Loader Practice (do on your own if you want!)
+
+It's possible to use webpack to load `.css` files, letting us treat them as JavaScript *modules* and thus import them the JavaScript (rather than needing to modify the HTML). This is helpful for letting different JavaScript files be associated with different CSS files, and webpack can be used to perform further optimizations (bundling multiple files for faster download, minimizing them, etc).
+
+As of right now, the webpage doesn't look great yet, because there is no styling (CSS) involved. To practice working with webpack loaders, add an `import` for `main.css` stylesheet to your `index.js`, and modify `webpack.config.js` so that it will bundle that file:
 
 1. Add the import to your `index.js` file. The file path should be _relative_ to the `index.js` file.
 
